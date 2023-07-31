@@ -1,0 +1,16 @@
+<div class="list__container">
+    <div class="left__container">
+        <div class="image__container">
+            <app-image-render></app-image-render>
+        </div>
+        <div class="user_information__container">
+            <p> Name : {{userInformation.name}}</p>
+            <p> Address : {{userInformation.address}} | <span> Mobile : +91-7676767676</span></p>
+            <p> </p>
+        </div>
+    </div>
+    <div class="right__container">
+        <app-sbutton [buttonConfiguration]="editButtonConfig" ></app-sbutton>
+        <app-sbutton [buttonConfiguration]="deleteButtonConfig"></app-sbutton>
+    </div>
+</div>

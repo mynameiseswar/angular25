@@ -8,6 +8,9 @@ import { StableComponent } from './stable/stable.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { ImageRenderComponent } from './image-render/image-render.component';
 import { FormsModule } from '@angular/forms';
+import { SqrootPipe } from './utils/sqroot.pipe';
+import { PowerPipe } from './utils/power.pipe';
+import { DisplayNamePipe } from './utils/display-name.pipe';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,10 @@ import { FormsModule } from '@angular/forms';
     SbuttonComponent,
     StableComponent,
     UserListComponent,
-    ImageRenderComponent
+    ImageRenderComponent,
+    SqrootPipe,
+    PowerPipe,
+    DisplayNamePipe
   ],
   imports: [
     BrowserModule,

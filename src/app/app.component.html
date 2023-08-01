@@ -18,7 +18,7 @@
     <app-user-list [userInformation]="item"></app-user-list>
 </div> -->
 
-
+<!-- 
 <button (click)="showSwitchBox('red')"> Show Red Box</button>
 <button (click)="showSwitchBox('green')"> Show Gree Box</button>
 <button (click)="showSwitchBox('blue')"> Show Blue Box</button>
@@ -35,4 +35,30 @@
     <div class="box green" *ngSwitchCase="'green'"></div>
     <div class="box blue" *ngSwitchCase="'blue'"></div>
     <div class="box black" *ngSwitchDefault="'black'"></div>
-</div>
+</div> -->
+
+
+Product Price: {{productPrice | currency: 'INR'}}
+<br/>
+
+Product Price: {{productPrice | percent:'1.0-2' }}
+
+<br/>
+
+Product Price: {{productPrice | number:'4.4' }}
+
+<br/>
+
+<p>Current Date: {{currentDate | date: 'short'}}</p>
+
+<p>Current Date: {{currentDate | date: 'medium'}}</p>
+<p>Current Date: {{currentDate | date: 'hh:mm:ss'}}</p>
+
+<p> {{z}} SQ Root= {{z | sqroot }}</p>
+<p> {{z}} Power = {{z | power: '3':'INR' }}</p>
+
+<p> UserName: {{userObject | displayName: 'short' | uppercase}}</p>
+<p> UserName: {{userObject | displayName: 'medium' | uppercase}}</p>
+<p> UserName: {{userObject | displayName: 'full' | uppercase}}</p>
+<p> UserName: {{userObject | displayName | uppercase}}</p>
+<p> UserName: {{userObject | displayName: 'fname' | uppercase}}</p>

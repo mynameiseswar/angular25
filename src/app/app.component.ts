@@ -24,15 +24,15 @@ export class AppComponent {
   userList: Array<UserList> = [
     {
       name: "Raju",
-      address: "HYD"
+      address: "hYD"
     },
     {
       name: 'Siva',
-      address: "Vizag"
+      address: "vizag"
     },
     {
       name: 'Venkat',
-      address : "HYD"
+      address : "HyD"
     },
   ];
 
@@ -41,5 +41,20 @@ export class AppComponent {
   showSwitchBox(targetBox: string){
     console.log(targetBox);
     this.selectedTargetBox = targetBox;
+  }
+
+  productPrice = 0.23;
+
+  currentDate = new Date();
+
+
+  z = 5;
+
+
+
+  userObject = {
+    fName: 'Siva',
+    lName: 'Kumar',
+    sName: 'p'
   }
 }

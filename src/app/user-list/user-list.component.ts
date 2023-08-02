@@ -11,7 +11,8 @@ export interface UserList{
 @Component({
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
-  styleUrls: ['./user-list.component.scss']
+  styleUrls: ['./user-list.component.scss'],
+  // providers: [RootService]
 })
 export class UserListComponent {
 
@@ -45,8 +46,6 @@ export class UserListComponent {
   }
 
   showUserDetails(e: any){
-    console.log(e);
-    this.userSelected.emit(e);
     this.rootService.setSelectedUser(this.userInformation);
   }
 

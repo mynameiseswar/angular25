@@ -57,4 +57,14 @@ export class AppComponent {
     lName: 'Kumar',
     sName: 'p'
   }
+
+  showUserList = false;
+
+  showList(){
+  this.showUserList = !this.showUserList;
+  }
+
+  selectedUser(e: any){
+    console.log(e);
+  }
 }

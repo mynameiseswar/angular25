@@ -11,6 +11,8 @@ import { FormsModule } from '@angular/forms';
 import { SqrootPipe } from './utils/sqroot.pipe';
 import { PowerPipe } from './utils/power.pipe';
 import { DisplayNamePipe } from './utils/display-name.pipe';
+import { RootService } from './utils/root.service';
+import { UserDetailsComponent } from './user-details/user-details.component';
 
 @NgModule({
   declarations: [
@@ -21,14 +23,17 @@ import { DisplayNamePipe } from './utils/display-name.pipe';
     ImageRenderComponent,
     SqrootPipe,
     PowerPipe,
-    DisplayNamePipe
+    DisplayNamePipe,
+    UserDetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    RootService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IButton } from '../sbutton/sbutton.component';
+import { RootService } from '../utils/root.service';
 
 export interface UserList{
   name: string;
@@ -14,10 +15,16 @@ export interface UserList{
 })
 export class UserListComponent {
 
+  constructor(
+    private rootService: RootService
+  ){}
+
   @Input() userInformation: UserList  = {
     name: "Default",
     address : 'Default'
   };
+
+  @Output() userSelected = new EventEmitter<IButton>();
 
 
   editButtonConfig: IButton = {
@@ -30,6 +37,17 @@ export class UserListComponent {
     title: 'Delete',
     class: 'red',
     action: 'delete'
+  }
+  detailsButtonConfig: IButton = {
+    title: 'Details',
+    class: 'red',
+    action: 'details'
+  }
+
+  showUserDetails(e: any){
+    console.log(e);
+    this.userSelected.emit(e);
+    this.rootService.setSelectedUser(this.userInformation);
   }
 
 }

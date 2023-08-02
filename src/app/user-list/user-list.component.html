@@ -10,6 +10,7 @@
         </div>
     </div>
     <div class="right__container">
+        <app-sbutton [buttonConfiguration]="detailsButtonConfig" (sButtonClick)="showUserDetails($event)"></app-sbutton>
         <app-sbutton [buttonConfiguration]="editButtonConfig" ></app-sbutton>
         <app-sbutton [buttonConfiguration]="deleteButtonConfig"></app-sbutton>
     </div>

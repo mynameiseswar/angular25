@@ -24,9 +24,9 @@ export class SbuttonComponent {
     action: ''
   };
 
-  @Output() sButtonClick = new EventEmitter<string>();
+  @Output() sButtonClick = new EventEmitter<IButton>();
 
   buttonClick(){
-    this.sButtonClick.emit(this.buttonConfiguration.action);
+    this.sButtonClick.emit(this.buttonConfiguration);
   }
 }

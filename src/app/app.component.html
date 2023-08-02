@@ -1,64 +1,16 @@
-<!-- 
-<button (click)="showBox()"> Show</button>
-<button (click)="hideBox()"> Hide </button> -->
-
-<!-- <button (click)="showBox1()"> Show/Hide </button> 
-
-{{boxStaus}}
-
-<div class="box" *ngIf="boxStaus else otherBox" ></div>
-
-<ng-template #otherBox>
-    <div class="green"></div>
-</ng-template> -->
-
-
-
-<!-- <div class="" *ngFor="let item of userList">
-    <app-user-list [userInformation]="item"></app-user-list>
-</div> -->
-
-<!-- 
-<button (click)="showSwitchBox('red')"> Show Red Box</button>
-<button (click)="showSwitchBox('green')"> Show Gree Box</button>
-<button (click)="showSwitchBox('blue')"> Show Blue Box</button>
-
-{{selectedTargetBox}}
-<div class="box red" *ngIf="selectedTargetBox == 'red'"></div>
-<div class="box green" *ngIf="selectedTargetBox == 'green'"></div>
-<div class="box blue" *ngIf="selectedTargetBox == 'blue'"></div>
-
-
-
-<div class="" [ngSwitch]="selectedTargetBox">
-    <div class="box red" *ngSwitchCase="'red'"></div>
-    <div class="box green" *ngSwitchCase="'green'"></div>
-    <div class="box blue" *ngSwitchCase="'blue'"></div>
-    <div class="box black" *ngSwitchDefault="'black'"></div>
-</div> -->
-
-
-Product Price: {{productPrice | currency: 'INR'}}
-<br/>
-
-Product Price: {{productPrice | percent:'1.0-2' }}
-
-<br/>
-
-Product Price: {{productPrice | number:'4.4' }}
-
-<br/>
-
-<p>Current Date: {{currentDate | date: 'short'}}</p>
-
-<p>Current Date: {{currentDate | date: 'medium'}}</p>
-<p>Current Date: {{currentDate | date: 'hh:mm:ss'}}</p>
-
-<p> {{z}} SQ Root= {{z | sqroot }}</p>
-<p> {{z}} Power = {{z | power: '3':'INR' }}</p>
-
-<p> UserName: {{userObject | displayName: 'short' | uppercase}}</p>
-<p> UserName: {{userObject | displayName: 'medium' | uppercase}}</p>
-<p> UserName: {{userObject | displayName: 'full' | uppercase}}</p>
-<p> UserName: {{userObject | displayName | uppercase}}</p>
-<p> UserName: {{userObject | displayName: 'fname' | uppercase}}</p>
+<div class="main__container">
+    <div class="left__container">
+        <h3>Uset List </h3>
+        <div class="">
+            <div *ngFor="let item of userList">
+            <app-user-list [userInformation]="item" (userSelected)="selectedUser($event)"></app-user-list>
+        </div>
+        </div>
+    </div>
+    <div class="right__container">
+        <h3> User Details</h3>
+        <div class="">
+            <app-user-details></app-user-details>
+        </div>
+    </div>
+</div>

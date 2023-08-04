@@ -1,16 +1,1 @@
-<div class="main__container">
-    <div class="left__container">
-        <h3>Uset List </h3>
-        <div class="">
-            <div *ngFor="let item of userList">
-            <app-user-list [userInformation]="item" (userSelected)="selectedUser($event)"></app-user-list>
-        </div>
-        </div>
-    </div>
-    <div class="right__container">
-        <h3> User Details</h3>
-        <div class="">
-            <app-user-details></app-user-details>
-        </div>
-    </div>
-</div>
+<app-box></app-box>

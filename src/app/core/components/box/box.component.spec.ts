@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SbuttonComponent } from './sbutton.component';
+import { BoxComponent } from './box.component';
 
-describe('SbuttonComponent', () => {
-  let component: SbuttonComponent;
-  let fixture: ComponentFixture<SbuttonComponent>;
+describe('BoxComponent', () => {
+  let component: BoxComponent;
+  let fixture: ComponentFixture<BoxComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [SbuttonComponent]
+      declarations: [BoxComponent]
     });
-    fixture = TestBed.createComponent(SbuttonComponent);
+    fixture = TestBed.createComponent(BoxComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

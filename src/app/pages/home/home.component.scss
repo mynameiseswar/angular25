@@ -1,0 +1,16 @@
+nav{
+    ul{
+        display: flex;
+        justify-content: flex-start;
+        li{
+            list-style-type: none;
+            padding: 0px 10px;
+            line-height: 50px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        li:hover{
+            background-color: #E5E5E5;
+        }
+    }
+}

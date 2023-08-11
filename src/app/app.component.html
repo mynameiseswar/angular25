@@ -1,1 +1,16 @@
-<app-box></app-box>
+<section>   
+    <header>
+        <nav>
+            <ul>
+                <li [routerLink]="'home'"> Home</li>
+                <li [routerLink]="'about-us'"> About Us</li>
+                <li> Contact us</li>
+                <li> Feedback</li>
+                <li [routerLink]="'login'"> Login</li>
+            </ul>
+        </nav>
+    </header>
+    <section class="work_space">
+        <router-outlet></router-outlet>
+    </section>
+</section>

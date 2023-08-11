@@ -1,26 +1,20 @@
-.box{
-    width: 200px;
-    height: 200px;
-
-    border-radius: 100%;
-    margin: 10px;
-}
-
-.red{
-    background-color: red;
-}
-.green{
-    background-color: green;
-}
-
-.blue{
-    background-color: blue;
-}
-.black{
-    background-color: #000;
-}
-
-.main__container{
-    display: flex;
-    justify-content: space-between;
+header{
+    background-color: #CCC;
+    nav{
+        ul{
+            display: flex;
+            justify-content: flex-end;
+            li{
+                list-style-type: none;
+                padding: 0px 10px;
+                line-height: 50px;
+                cursor: pointer;
+                font-size: 18px;
+            }
+            li:hover{
+                background-color: #E5E5E5;
+            }
+        }
+    }
+  
 }

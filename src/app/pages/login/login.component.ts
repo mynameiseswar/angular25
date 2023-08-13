@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { LoginService, UserInformation } from './login.service';
 import { Router } from '@angular/router';
+import { AuthenticationService } from 'src/app/auth/authentication.service';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,8 @@ export class LoginComponent {
 
   constructor(
     private loginService: LoginService,
-    private router: Router
+    private router: Router,
+    private authenticationService: AuthenticationService
   ){
 
   }
@@ -34,6 +36,7 @@ export class LoginComponent {
     this.loginService.userLogin(this.userObject).subscribe(
       (userInfomration: any) =>{
         if(userInfomration && userInfomration.hasOwnProperty('token')){
+          this.authenticationService.setUserStatus(true);
           this.router.navigate(['/product'])
         }
       }

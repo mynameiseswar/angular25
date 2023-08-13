@@ -1,1 +1,26 @@
-<p>product-list works!</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+        <h4 class="text-info ps-3"> Product List</h4>
+    </div>
+    <div class="col d-flex justify-content-end">
+      <button class="btn btn-primary mx-1" (click)="showAllProducts()"> All</button>
+      <button class="btn btn-primary mx-1" (click)="filterByCategories(cat)" *ngFor="let cat of categoriesList"> {{cat | uppercase}}</button>
+    </div>
+    
+</div>
+    <div class="row">
+        <div class=" col-sm-4 col-md-3 col-lg-2" *ngFor="let product of productList;">
+            <div class="card my-3" >
+                <img [src]="product.image" height="300" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title text-custom-wrap" [tooltip]="product.title" >{{product.title}}</h5>
+                  <p class="m-0 card-text text-primary">Pirce: {{product.price | currency: 'INR'}}</p>
+                  <p class="m-0 card-text text-custom-wrap" [tooltip]="product.description">{{product.description}}</p>
+                  <div class="btn btn-info" (click)="navigateToDetailsPage(product)">Details</div>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+

@@ -1,1 +1,37 @@
-<p>product-details works!</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <h4 class="text-info ps-3"> Product Details</h4>
+
+        </div>
+        <div class="col">
+            <span class="material-icons text-danger fs-2 d-flex justify-content-end cursor__pointer" [routerLink]="'/product/list'">close</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" *ngFor="let key of objectKeysList">
+                    <span [ngSwitch]="key"> 
+                        <span *ngSwitchCase="'price'">
+                            {{key}} : {{productDetails[key] | currency: 'INR'}}
+                        </span>
+                        <span *ngSwitchCase="'rating'">
+                             {{key}} : <rating [(ngModel)]="productDetails[key]['rate']" [max]="5" [readonly]="true"></rating> ({{productDetails[key]['rate']}}/ {{productDetails[key]['count']}})
+                        </span>
+
+                        <span *ngSwitchDefault>
+                            {{key}} : {{productDetails[key] | json}}
+                        </span>
+
+                    </span>
+                </li>
+              </ul>
+        </div>
+        <div class="col d-flex justify-content-center align-items-center">
+            <figure>
+                <img [src]="productDetails?.image" height="400" alt="Produt Image"/>
+            </figure>
+        </div>
+    </div>
+</div>

@@ -1,26 +1,35 @@
 <div class="">
     <header class="bg-light">
-        <div class="row">
-            <div class="col-md-4 px-5 py-2">
+        <div class="row height-60">
+            <div class="col px-5 py-2">
                 <figure class="m-0">
-                    <img src="./assets/images/logo.png" height="60px" alt="log" />
-
-
-                    
+                    <img src="./assets/images/logo.png" height="50px" alt="log" />
                 </figure>
             </div>
-            <div class="col-md-8">
-                <nav>
-                    <ul>
-                        <li>
-                            <span class="material-icons">person</span>
-                        </li>
-                    </ul>
-                </nav>
+            <div class="col full-height">
+                <ul class="m-0 list-unstyled  d-flex justify-content-end align-items-center full-height">
+                    <li class="full-height d-flex align-items-center position-relative cursor__pointer ">
+                        <span class="material-icons icon_color fs-3 ">notifications_none</span>
+                        <span class="position-absolute top-10 start-100 translate-middle badge rounded-pill bg-info">
+                            9+
+                            <span class="visually-hidden">unread messages</span>
+                          </span>
+                    </li>
+                    <li class="full-height d-flex align-items-center ps-4  pe-2 text-dark-subtle"> | </li>
+
+                    <li class="full-height d-flex align-items-center">
+                        Raju@gmail.com    <span class="material-icons icon_color fs-1 px-2">person</span>
+                    </li>
+                    <li class="full-height d-flex align-items-center px-2 text-dark-subtle"> | </li>
+                    <li class="full-height d-flex align-items-center cursor__pointer" (click)="userLogout()">
+                       <span class="material-icons icon_color fs-3 px-2">logout</span>
+                    </li>
+                </ul>
             </div>
         </div>
     </header>
-    <div>
+    <hr class="m-0 p-0"/>
+    <div class="py-3">
         <router-outlet></router-outlet>
     </div>
 </div>

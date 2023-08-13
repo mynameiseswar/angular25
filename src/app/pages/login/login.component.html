@@ -1,5 +1,5 @@
 <div class="container-fluid login__main__contianer vh-100 d-flex align-items-center justify-content-center">
-    <div class="login__continaer vh-100">
+    <div class="login__continaer">
         <div class="row vh-100">
             <div class=" col-sm-6 col-md-7 col-xl-8 vh-100">
                 <div class="login__left__continaer vh-100 d-flex align-items-center justify-content-center">
@@ -11,7 +11,7 @@
             <div class="col-sm-6 col-md-5 col-xl-4   d-flex flex-column align-items-center justify-content-center">
                 <h5> User Login</h5>
                 <div class="p-5 w-100">
-                    <form class="w-100" (ngSubmit)="userLogin()" >
+                    <form class="w-100" #f="ngForm" (ngSubmit)="userLogin()" >
                         <div class="mb-3">
                             <label class="form-label"> Email Address</label>
                             <input class="form-control" name="email" type="email" [(ngModel)]="userObject.userName" />

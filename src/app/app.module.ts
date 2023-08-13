@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { RouterModule } from '@angular/router';
 import { PagenotfoundComponent } from './pages/pagenotfound/pagenotfound.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -18,7 +19,8 @@ import { PagenotfoundComponent } from './pages/pagenotfound/pagenotfound.compone
     BrowserModule,
     AppRoutingModule,
     CoreModule,
-    RouterModule
+    RouterModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

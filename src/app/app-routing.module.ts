@@ -23,6 +23,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/login/login.module').then((m)=>m.LoginModule)
   },
   {
+    path: 'product',
+    loadChildren: () => import('./pages/product/product.module').then((m)=> m.ProductModule)
+  },
+  {
     path: '**',
     component: PagenotfoundComponent
   }
@@ -30,7 +34,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    useHash: true
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

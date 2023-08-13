@@ -1,3 +1,28 @@
-<ul>
-    <li (click)="selectProduct(proudct)" *ngFor="let proudct of productList"> Produdct {{proudct}}</li>
-</ul>
+<div class="">
+    <header class="bg-light">
+        <div class="row">
+            <div class="col-md-4 px-5 py-2">
+                <figure class="m-0">
+                    <img src="./assets/images/logo.png" height="60px" alt="log" />
+
+
+                    
+                </figure>
+            </div>
+            <div class="col-md-8">
+                <nav>
+                    <ul>
+                        <li>
+                            <span class="material-icons">person</span>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div>
+        <router-outlet></router-outlet>
+    </div>
+</div>
+
+

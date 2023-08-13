@@ -1,24 +1,8 @@
-header{
-    background-color: #CCC;
-    nav{
-        ul{
-            display: flex;
-            justify-content: flex-end;
-            li{
-                list-style-type: none;
-                padding: 0px 10px;
-                line-height: 50px;
-                cursor: pointer;
-                font-size: 18px;
-            }
-            li:hover{
-                background-color: #E5E5E5;
-            }
-        }
-    }
-
-    .active__route{
-        background-color: #E5E5E5;
-    }
-  
+.main__contianer{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
 }
+

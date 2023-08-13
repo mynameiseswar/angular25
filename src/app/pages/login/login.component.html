@@ -1,15 +1,32 @@
-<section class="main__login__container">
-    <section class="login__container">
-        <h4> User Login </h4>
-        <br/>
-        <form>
-            <label> User Name</label>
-            <input type="text" />
-
-            <label> Password</label>
-            <input type="password" />
-
-            <button type="submit"> Sumbit</button>
-        </form>
-    </section>
-</section>
+<div class="container-fluid login__main__contianer vh-100 d-flex align-items-center justify-content-center">
+    <div class="login__continaer vh-100">
+        <div class="row vh-100">
+            <div class=" col-sm-6 col-md-7 col-xl-8 vh-100">
+                <div class="login__left__continaer vh-100 d-flex align-items-center justify-content-center">
+                    <h5>
+                        Welcome to Login page
+                    </h5>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-5 col-xl-4   d-flex flex-column align-items-center justify-content-center">
+                <h5> User Login</h5>
+                <div class="p-5 w-100">
+                    <form class="w-100" (ngSubmit)="userLogin()" >
+                        <div class="mb-3">
+                            <label class="form-label"> Email Address</label>
+                            <input class="form-control" name="email" type="email" [(ngModel)]="userObject.userName" />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label"> Password</label>
+                            <input class="form-control" name="password" type="password" [(ngModel)]="userObject.password" />
+                        </div>
+                        <div class="mb-2 d-flex justify-content-end">
+                            <button type="reset" class="btn btn-danger"> Reset </button>
+                            <button type="submit" class="btn btn-success ms-2"> Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

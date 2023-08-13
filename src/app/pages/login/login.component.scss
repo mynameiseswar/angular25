@@ -1,13 +1,13 @@
-.main__login__container{
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 50px;
-    bottom: 0;
+.login__main__contianer{
+    background: rgb(10,144,240);
+    background: linear-gradient(90deg, rgba(10,144,240,1) 41%, rgba(255,0,213,0.5760898109243697) 89%);
+ 
 }
-.login__container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
+
+.login__continaer{
+    width: calc(100% - 300px);
+    height: calc(100% - 200px);
+    background-color: rgba(255,255,255, 0.3);
 }
+
+

@@ -14,6 +14,7 @@ export class ProductDetailsComponent {
   productDetails: any;
 
   objectKeysList: any =[];
+  hasUnSavedChanges = false;
 
   constructor(
     private productDetailsService: ProductDetailsService,

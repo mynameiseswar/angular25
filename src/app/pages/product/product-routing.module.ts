@@ -20,7 +20,8 @@ const routes: Routes = [
       },
       {
         path: 'details/:productId',
-        component: ProductDetailsComponent
+        component: ProductDetailsComponent,
+        canDeactivate:[(componet: ProductDetailsComponent) => !componet.hasUnSavedChanges]
       }
     ]
   }

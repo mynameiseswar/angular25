@@ -24,7 +24,7 @@ export class LoginComponent {
   // userName = new FormControl('');
   // password = new FormControl('');
 
-  userObject: UserInformation = {
+  userObject: UserInformation | any = {
     userName: '',
     password: ''
   }

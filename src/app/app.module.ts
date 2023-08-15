@@ -2,8 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AuthenticationService } from './auth/authentication.service';
-import { AuthGuardService } from './auth/auth-guard.service';
+import { AuthenticationService, UserToken } from './auth/authentication.service';
 
 
 
@@ -19,7 +18,7 @@ import { AuthGuardService } from './auth/auth-guard.service';
   ],
   providers: [
     AuthenticationService,
-    AuthGuardService
+    UserToken
   ],
   bootstrap: [AppComponent]
 })

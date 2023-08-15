@@ -11,18 +11,24 @@
             <div class="col-sm-6 col-md-5 col-xl-4   d-flex flex-column align-items-center justify-content-center">
                 <h5> User Login</h5>
                 <div class="p-5 w-100">
-                    <form class="w-100" #f="ngForm" (ngSubmit)="userLogin()" >
+                    {{password.errors| json}}
+
+                    
+                    <form class="w-100" #userLoginForm="ngForm" (ngSubmit)="userLogin()" >
                         <div class="mb-3">
-                            <label class="form-label"> Email Address</label>
-                            <input class="form-control" name="email" type="email" [(ngModel)]="userObject.userName" />
+                            <label class="form-label"> User Name <sup>*</sup></label>
+                            <input class="form-control" [ngClass]="{'border border-danger': userName.touched &&  userName.errors?.['required'] }"  #userName="ngModel" name="userName" autocomplete="off" required type="text" [(ngModel)]="userObject.userName" />
+                            <span class="text-danger " *ngIf="userName && userName.errors?.['required']== true"> Username is required.</span>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label"> Password</label>
-                            <input class="form-control" name="password" type="password" [(ngModel)]="userObject.password" />
+                            <label class="form-label"> Password <sup>*</sup></label>
+                            <input class="form-control" #password="ngModel" name="password" autocomplete="off" required minlength="4" type="password" [(ngModel)]="userObject.password" />
+                            <span *ngIf="password  && password.errors?.['required'] == true"> Password is Required. </span>
+                            <span *ngIf="password && password.errors?.['minlength']"> Min Length is ({{password.errors?.['minlength']?.['requiredLength']}} - {{password.errors?.['minlength']?.['actualLength']}} )/{{password.errors?.['minlength']?.['requiredLength']}} chart. </span>
                         </div>
                         <div class="mb-2 d-flex justify-content-end">
                             <button type="reset" class="btn btn-danger"> Reset </button>
-                            <button type="submit" class="btn btn-success ms-2"> Submit</button>
+                            <button type="submit" class="btn btn-success ms-2" [ngClass]="{'disabled': !userLoginForm.valid}"  > Submit</button>
                         </div>
                     </form>
                 </div>

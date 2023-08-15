@@ -11,10 +11,53 @@
             <div class="col-sm-6 col-md-5 col-xl-4   d-flex flex-column align-items-center justify-content-center">
                 <h5> User Login</h5>
                 <div class="p-5 w-100">
-                    {{password.errors| json}}
 
-                    
-                    <form class="w-100" #userLoginForm="ngForm" (ngSubmit)="userLogin()" >
+
+                    <form [formGroup]="userLoginFromGroup" (ngSubmit)="userLogin()">
+                        <div class="mb-3">
+                            <label class="form-label"> User Name <sup>*</sup></label>
+                            <input type="text" class="form-control" formControlName="username">
+                        </div>
+
+
+                        <div class="mb-3">
+                            <label class="form-label"> Password</label>
+                            <input id="password" type="password" required class="form-control"
+                                formControlName="password" />
+                            <span
+                                *ngIf="userLoginFromGroup.get('password')  && userLoginFromGroup.get('password')?.errors?.['required'] == true">
+                                Password is Required. </span>
+                            <span
+                                *ngIf="userLoginFromGroup.get('password') && userLoginFromGroup.get('password')?.errors?.['minlength']">
+                                Min Length is
+                                ({{userLoginFromGroup.get('password')?.errors?.['minlength']?.['requiredLength']}} -
+                                {{userLoginFromGroup.get('password')?.errors?.['minlength']?.['actualLength']}}
+                                )/{{userLoginFromGroup.get('password')?.errors?.['minlength']?.['requiredLength']}}
+                                chart. </span>
+                        </div>
+                        <div class="" formGroupName="address">
+                            <div class="mb-3">
+                                <label class="form-label"> City</label>
+                                <input type="text" required class="form-control" formControlName="city" />
+
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label"> Pincode</label>
+                                <input type="number" required class="form-control" formControlName="pincode" />
+
+                            </div>
+                        </div>
+                       
+                
+                        <div class="mb-3">
+                            <button type="reset" class="btn btn-danger"> Reset </button>
+                            <button type="submit" class="btn btn-success ms-2" [disabled]="!userLoginFromGroup.valid">
+                                Submit</button>
+                        </div>
+                    </form>
+
+
+                    <!-- <form class="w-100" #userLoginForm="ngForm" (ngSubmit)="userLogin()" >
                         <div class="mb-3">
                             <label class="form-label"> User Name <sup>*</sup></label>
                             <input class="form-control" [ngClass]="{'border border-danger': userName.touched &&  userName.errors?.['required'] }"  #userName="ngModel" name="userName" autocomplete="off" required type="text" [(ngModel)]="userObject.userName" />
@@ -30,7 +73,7 @@
                             <button type="reset" class="btn btn-danger"> Reset </button>
                             <button type="submit" class="btn btn-success ms-2" [ngClass]="{'disabled': !userLoginForm.valid}"  > Submit</button>
                         </div>
-                    </form>
+                    </form> -->
                 </div>
             </div>
         </div>
